@@ -51,7 +51,7 @@ public class CatalogueElementsDAO {
         transaction.begin();
         //"prendo in carico" il nuovo elemento
         entityManager.remove(found);
-        //lo aggiungo al db
+        //lo rimuovo dal db
         transaction.commit();
 
         System.out.println(newCatalogueElement.getTitle() + " è stato rimosso dal catalogo");
