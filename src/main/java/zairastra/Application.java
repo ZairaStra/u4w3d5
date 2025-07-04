@@ -49,9 +49,24 @@ public class Application {
 //        cd.saveCatalogueElement(fourthMagazine);
 //        cd.saveCatalogueElement(fifthMagazine);
 
-        CatalogueElement e1FromDb = cd.findById("071d8203-1839-45f6-aaf0-a5fca08d2993");
+        //PROBLEMA: SALVA CORRETTAMENTE UNA VOLTA SOLA PER SAVE ANCHE SE TENTO DI SALVARE DUE VOLTE, PERò IN CONSOLE MI DA COMUNQUE MESSAGGIO DI AVVENUTO SALVATAGGIO
+        //DOVREI FARE UN IF?
+
+        //find
+        CatalogueElement e1FromDb = cd.findById("0f5c2158-90be-44d1-a78d-0a09072f77ed");
         System.out.println("L'elemento corrispondente al codice ISBN inserito è: " + e1FromDb.getTitle());
 
+        //delete
+        //cd.deleteCatalogueElement(e1FromDb);
+
+        //finByAUthor
+        cd.findByAuthor("Tolkien").forEach(System.out::println);
+        cd.findByAuthor("Turton").forEach(System.out::println);
+
+        //findByPubYear
+        cd.findByPubYear(2019).forEach(System.out::println);
+        cd.findByPubYear(2025).forEach(System.out::println);
+        cd.findByPubYear(1987).forEach(System.out::println);
 
         em.close();
         emf.close();

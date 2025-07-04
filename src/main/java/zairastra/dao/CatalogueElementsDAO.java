@@ -2,8 +2,12 @@ package zairastra.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+import zairastra.entities.Book;
 import zairastra.entities.CatalogueElement;
 import zairastra.exceptions.NotFoundException;
+
+import java.util.List;
 
 public class CatalogueElementsDAO {
     private EntityManager entityManager;
@@ -51,5 +55,19 @@ public class CatalogueElementsDAO {
         transaction.commit();
 
         System.out.println(newCatalogueElement.getTitle() + " è stato rimosso dal catalogo");
+    }
+
+    //ricerca per nome autore
+    public List<Book> findByAuthor(String author) {
+        TypedQuery<Book> query = entityManager.createQuery("SELECT b FROM Book b WHERE b.author=:author", Book.class);
+        query.setParameter("author", author);
+        return query.getResultList();
+    }
+
+    //ricerca per anno pubblicazione
+    public List<CatalogueElement> findByPubYear(int pubYear) {
+        TypedQuery<CatalogueElement> query = entityManager.createQuery("SELECT c FROM CatalogueElement c WHERE c.pubYear= :year", CatalogueElement.class);
+        query.setParameter("year", pubYear);
+        return query.getResultList();
     }
 }

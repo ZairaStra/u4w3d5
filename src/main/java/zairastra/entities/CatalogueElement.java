@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 //lego al db
 @Entity
-@Table(name = "elements")
+@Table(name = "Elements")
 
 //definisco il modello relazionale
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
