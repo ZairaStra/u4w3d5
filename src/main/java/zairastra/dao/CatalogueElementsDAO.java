@@ -70,4 +70,12 @@ public class CatalogueElementsDAO {
         query.setParameter("year", pubYear);
         return query.getResultList();
     }
+
+    //mi ero dimenticata ricerca per titolo
+    public List<CatalogueElement> findByTitle(String titlePartial) {
+        TypedQuery<CatalogueElement> query = entityManager.createQuery("SELECT c FROM CatalogueElement c WHERE LOWER(c.title) LIKE LOWER(:titlePartial)", CatalogueElement.class);
+        query.setParameter("titlePartial", "%" + titlePartial + "%");
+
+        return query.getResultList();
+    }
 }

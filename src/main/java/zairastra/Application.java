@@ -77,7 +77,12 @@ public class Application {
         cd.findByPubYear(2025).forEach(System.out::println);
         cd.findByPubYear(1987).forEach(System.out::println);
 
+        //findByTitle
+        cd.findByTitle("signore").forEach(System.out::println);
+        cd.findByTitle("am").forEach(System.out::println);
+        cd.findByTitle("Evelyn").forEach(System.out::println);
 
+        
         //creo una serie di utenti
         User firstUser = new User("Zaira", "Straticò", LocalDate.of(1993, 1, 28));
         User secondUser = new User("Matteo", "Alfano", LocalDate.of(1993, 11, 8));
