@@ -26,9 +26,8 @@ public abstract class CatalogueElement {
     //COSTRUTTORI
     public CatalogueElement() {
     }
-    
-    public CatalogueElement(String isbn, String title, int pubYear, int pageNumb) {
-        this.isbn = isbn;
+
+    public CatalogueElement(String title, int pubYear, int pageNumb) {
         this.title = title;
         this.pubYear = pubYear;
         this.pageNumb = pageNumb;

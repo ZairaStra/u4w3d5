@@ -16,8 +16,8 @@ public class Book extends CatalogueElement {
     public Book() {
     }
 
-    public Book(String isbn, String title, int pubYear, int pageNumb, String author, String genre) {
-        super(isbn, title, pubYear, pageNumb);
+    public Book(String title, int pubYear, int pageNumb, String author, String genre) {
+        super(title, pubYear, pageNumb);
         this.author = author;
         this.genre = genre;
     }

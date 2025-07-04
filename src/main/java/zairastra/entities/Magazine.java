@@ -1,10 +1,12 @@
 package zairastra.entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import zairastra.entities.enums.Periodicity;
 
+@Entity
 public class Magazine extends CatalogueElement {
 
     //ATTRIBUTI
@@ -16,8 +18,8 @@ public class Magazine extends CatalogueElement {
     public Magazine() {
     }
 
-    public Magazine(String isbn, String title, int pubYear, int pageNumb, Periodicity periodicity) {
-        super(isbn, title, pubYear, pageNumb);
+    public Magazine(String title, int pubYear, int pageNumb, Periodicity periodicity) {
+        super(title, pubYear, pageNumb);
         this.periodicity = periodicity;
     }
 
