@@ -82,7 +82,7 @@ public class Application {
         cd.findByTitle("am").forEach(System.out::println);
         cd.findByTitle("Evelyn").forEach(System.out::println);
 
-        
+
         //creo una serie di utenti
         User firstUser = new User("Zaira", "Straticò", LocalDate.of(1993, 1, 28));
         User secondUser = new User("Matteo", "Alfano", LocalDate.of(1993, 11, 8));
@@ -120,9 +120,13 @@ public class Application {
         ld.saveLoan(fifthLoan);
         ld.saveLoan(sixthLoan);
 
+
         //        //find
 //        Loan l1FromDb = ld.findById("");
 //        System.out.println("Il prestito con numero seriale corrispondente all'inserito è: " +l1FromDb);
+
+        ld.findsByUser(firstUser.getCardCode()).forEach(System.out::println);
+        ld.findsByUser(thirdUser.getCardCode()).forEach(System.out::println);
 
         //delete
         //ud.deleteCatalogueElement(d1FromDb);
